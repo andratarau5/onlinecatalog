@@ -38,7 +38,6 @@ public class ProfessorController {
 
     @PostMapping("/addprofessor")
     public String addProfessor(@ModelAttribute Professor professor) {
-//        System.out.println(student);
         professorService.save(professor);
         return "redirect:/allprofessors";
         //TODO: show in same page on the left all students, on the right add a new student
