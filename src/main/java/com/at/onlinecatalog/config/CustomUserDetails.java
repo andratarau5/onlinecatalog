@@ -50,4 +50,4 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}
+}  //this class is made for changing easly the variables
