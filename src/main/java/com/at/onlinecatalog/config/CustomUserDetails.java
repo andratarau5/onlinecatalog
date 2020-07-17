@@ -12,14 +12,15 @@ public class CustomUserDetails implements UserDetails {
 
     private User user;
 
-//    public CustomUserDetails(User user) {    Constructor used to pass user replaced with lombok
+    //commented out because of lombok. Constructor used to pass user to this class
+//    public CustomUserDetails(User user) {
 //        this.user = user;
 //    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
-    }  //the authorization for an user, what he can access and what he can't
+    }
 
     @Override
     public String getPassword() {
@@ -50,4 +51,4 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}  //this class is made for changing easly the variables
+}

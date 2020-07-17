@@ -8,17 +8,25 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
 // TODO: to be sure that username is unique
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // start from 1  on each table
     private Integer userId;
-    private String username;
+
+    private String username; //nickname
     private String emailAddress;
+
     private String password;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Role role;
+
+    @OneToOne(mappedBy = "user")
+    private PendingUser pendingUser;
 }
